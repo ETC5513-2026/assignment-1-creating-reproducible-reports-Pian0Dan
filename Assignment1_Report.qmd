@@ -1,0 +1,12 @@
+---
+title: "Assignment 1"
+author: "Daniel Loza"
+date: "02-04-2026"
+format: 
+    html:
+        theme: cerulean
+    pdf:
+        theme: cerulean
+---
+
+aaa
