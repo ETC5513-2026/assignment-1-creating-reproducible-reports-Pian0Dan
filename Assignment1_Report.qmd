@@ -15,5 +15,32 @@ format:
 # load libraries
 library(tidyverse)
 library(ggplot2)
-}```
+library(readr)
+library(here)
+```
+
+```{r}
+# Import the dataset
+df <- read_csv(here("data/33842388_Daniel Loza.csv"))
+```
+
+# Introduction
+In this report, I will visualise the relationship between number of visits and the purchase amount, to establish whether a correlation exists between the two variables. The dataset contains information on customer visits and their corresponding purchase amounts, which will be analyzed to determine if there is a significant correlation between these two factors.
+
+# Research Question
+Does a greater number of visits correlate with a higher purchase amount?
+
+# Dataset Introduction
+The dataset used in this analysis contains two key variables: 'number_of_visits' and 'purchase_amount'. The 'number_of_visits' variable represents the total number of visits made by customers, while the 'purchase_amount' variable indicates the total amount spent by customers during those visits.
+
+To ensure a valid data set, the data will be cleaned by removing any rows with missing values in the 'number_of_visits' and 'purchase_amount' columns. This step is crucial to maintain the integrity of the analysis and to ensure that the results are based on complete data.
+
+```{r}
+#| echo=FALSE, message=FALSE, warning=FALSE
+
+# Subset and clean the data
+df <- df %>%
+  select(number_of_visits, purchase_amount) %>%
+  drop_na()
+```
 
