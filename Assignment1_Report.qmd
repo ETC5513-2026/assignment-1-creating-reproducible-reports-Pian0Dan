@@ -9,4 +9,11 @@ format:
         theme: cerulean
 ---
 
-aaa
+```{r}
+#| echo=FALSE, message=FALSE, warning=FALSE
+
+# load libraries
+library(tidyverse)
+library(ggplot2)
+}```
+
