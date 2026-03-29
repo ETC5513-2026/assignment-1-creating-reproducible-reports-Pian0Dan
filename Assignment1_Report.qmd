@@ -25,15 +25,15 @@ df <- read_csv(here("data/33842388_Daniel Loza.csv"))
 ```
 
 # Introduction
-In this report, I will visualise the relationship between number of visits and the purchase amount, to establish whether a correlation exists between the two variables. The dataset contains information on customer visits and their corresponding purchase amounts, which will be analyzed to determine if there is a significant correlation between these two factors.
+In this report, I will visualise the relationship between marketing spend and the purchase amount, to establish whether a correlation exists between the two variables. As the customers are of different segments, I will also explore whether the correlation varies across different customer segments (to control for segment variables). This analysis will provide insights into the effectiveness of marketing spend in driving purchase amounts and whether this relationship is influenced by customer segmentation.
 
 # Research Question
-Does a greater number of visits correlate with a higher purchase amount?
+Does a higher marketing spend correlate with a higher purchase amount? Does this correlation differ across different customer segments?
 
 # Dataset Introduction
-The dataset used in this analysis contains two key variables: 'number_of_visits' and 'purchase_amount'. The 'number_of_visits' variable represents the total number of visits made by customers, while the 'purchase_amount' variable indicates the total amount spent by customers during those visits.
+The dataset used in this analysis contains seven variables: 'customer_id', 'signup_date', 'marketing_spend', 'visits', 'purchase_amount', 'segnemnt' and 'notes'. These have all been tracked across the duration of a recent marketing capmaign. 
 
-To ensure a valid data set, the data will be cleaned by removing any rows with missing values in the 'number_of_visits' and 'purchase_amount' columns. This step is crucial to maintain the integrity of the analysis and to ensure that the results are based on complete data.
+Of particular interest
 
 ```{r}
 #| echo=FALSE, message=FALSE, warning=FALSE
@@ -44,3 +44,4 @@ df <- df %>%
   drop_na()
 ```
 
+## Dataset Description
