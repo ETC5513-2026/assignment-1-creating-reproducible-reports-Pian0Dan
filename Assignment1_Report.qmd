@@ -31,16 +31,18 @@ In this report, I will visualise the relationship between marketing spend and th
 Does a higher marketing spend correlate with a higher purchase amount? Does this correlation differ across different customer segments?
 
 # Dataset Introduction
-The dataset used in this analysis contains seven variables: 'customer_id', 'signup_date', 'marketing_spend', 'visits', 'purchase_amount', 'segnemnt' and 'notes'. These have all been tracked across the duration of a recent marketing capmaign. 
+The dataset used in this analysis contains seven variables: 'customer_id', 'signup_date', 'marketing_spend', 'visits', 'purchase_amount', 'segment' and 'notes'. These have all been tracked across the duration of a recent marketing capmaign. 
 
-Of particular interest
+Of particular interest for this investigation are the 'marketing_spend' and 'purchase_amount' variables, as they will allow us to explore the relationship between marketing spend and purchase amount. The 'segment' variable will also be important for controlling for customer segmentation in our analysis. 
+
+The data will be cleaned by filtering out any missing values across the analysed columns, and then subsetting the data to only include the relevant variables for this analysis.
 
 ```{r}
 #| echo=FALSE, message=FALSE, warning=FALSE
 
 # Subset and clean the data
 df <- df %>%
-  select(number_of_visits, purchase_amount) %>%
+  select(visits, purchase_amount, segment) %>%
   drop_na()
 ```
 
