@@ -20,6 +20,8 @@ library(here)
 ```
 
 ```{r}
+#| echo=FALSE, message=FALSE, warning=FALSE
+
 # Import the dataset
 df <- read_csv(here("data/33842388_Daniel Loza.csv"))
 ```
