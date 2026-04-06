@@ -57,6 +57,8 @@ The `marketing_spend` is a continuous variable that represents the amount of mon
 #| echo: FALSE 
 #| message: FALSE
 #| warning: FALSE
+#| label: "tbl-dataset-means"
+#| tbl-cap: "Mean marketing spend and purchase amount by segment"
 
 # Table of mean marketing spend and purchase amount by segment
 
@@ -70,10 +72,10 @@ summary_table <- df %>%
   ungroup() %>%
   rename(Segment = segment)
 
-knitr::kable(summary_table, digits = 2, caption = "Mean marketing spend and purchase amount by segment")
+knitr::kable(summary_table, digits = 2)
 ```
 
-@Dataset-Mean-Summary-Table shows that the "Consumer" segment has the highest mean marketing spend and purchase amount, followed by the "Enterprise" segment, and then the "SMB" segment. This suggests that there may be differences in marketing spend and purchase amount across different customer segments, which will be further explored in the analysis.
+@tbl-dataset-means shows that the "Consumer" segment has the highest mean marketing spend and purchase amount, followed by the "Enterprise" segment, and then the "SMB" segment. This suggests that there may be differences in marketing spend and purchase amount across different customer segments, which will be further explored in the analysis.
 
 
 
@@ -81,8 +83,10 @@ knitr::kable(summary_table, digits = 2, caption = "Mean marketing spend and purc
 #| echo: FALSE
 #| message: FALSE
 #| warning: FALSE
+#| label: "fig-boxplots"
+#| fig-cap: "Boxplots of marketing spend by segment"
 
-# Boxplots of mean marketing spend and purchase amount by segment
+# Boxplots of mean marketing spend by segment
 
 ggplot2::ggplot(df, aes(x = segment, y = marketing_spend)) +
   geom_boxplot() +
@@ -90,6 +94,10 @@ ggplot2::ggplot(df, aes(x = segment, y = marketing_spend)) +
   theme_classic()
 ```
 
-@Dataset-Boxplots shows that the median
+@fig-boxplots shows that the median marketing spend is much closer between the three segments, than the means shown in @tbl-dataset-means. This suggests that there may be some outliers in the "Consumer" segment that are driving up the mean marketing spend for that segment, which will be further explored in the analysis.
+@fig-boxplots also shows that the "Enterprise" segment has the smallest range and variability of the three segments.
 
 # Results
+
+To explore the relationship between marketing spend and purchase amount, I created colour-segmented scatterplots of the two variables, and calculated the correlation coefficient for each segment to quantify the strength and direction of the relationship.
+
