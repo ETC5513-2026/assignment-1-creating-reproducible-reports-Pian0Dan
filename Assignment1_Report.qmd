@@ -116,9 +116,9 @@ ggplot(df, aes(x = marketing_spend, y = purchase_amount, colour = segment)) +
   theme_classic()
 ```
 
-@fig-scatterplot shows a positive relationship between marketing spend and purchase amount across all segments, with the "Consumer" segment showing a stronger relationship than the "SMB" and "Enterprise" segments. 
+@fig-scatterplot shows a positive relationship between marketing spend and purchase amount across all segments, with the "Consumer" segment showing a stronger relationship than the "SMB" and "Enterprise" segments. @fig-scatterplot also shows that there is more variability in the purchase amount for the "Consumer" segment compared to the other two segments, which may be driving the stronger relationship observed in that segment. It can also be noted that the majority of the higher marketing spend and purchase amount observations belong to the "Consumer" segment, which reinforces the likelihood of potential outliers in that segment driving up the means.
 
-To further explore this relationship, I calculated the correlation coefficient for each segment.
+To further explore this overall relationship, I calculated the correlation coefficient for each segment.
 
 ```{r}
 #| echo: FALSE
@@ -132,7 +132,9 @@ To further explore this relationship, I calculated the correlation coefficient f
 correlations <- df %>%
   group_by(segment) %>%
   summarise(correlation = cor(marketing_spend, purchase_amount, use = "complete.obs")) %>%
-  ungroup()
+  ungroup() %>%
+  rename(Segment = segment,
+  Correlation = correlation)
 
 knitr::kable(correlations, digits = 2)
 ```
