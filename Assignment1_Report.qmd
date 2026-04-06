@@ -54,7 +54,9 @@ For the sake of the analysis, we are using `r ncol(df)` variables, with `r nrow(
 The `marketing_spend` is a continuous variable that represents the amount of money spent on marketing for each customer. The `purchase_amount` is also a continuous variable that represents the amount of money spent by each customer on purchases. The `segment` variable is a categorical variable that represents the different customer segments, and can take the values "Consumer", "SMB" and "Enterprise".
 
 ```{r}
-#| echo=FALSE, message=FALSE, warning=FALSE
+#| echo: FALSE 
+#| message: FALSE
+#| warning: FALSE
 
 # Table of mean marketing spend and purchase amount by segment
 
@@ -71,5 +73,23 @@ summary_table <- df %>%
 knitr::kable(summary_table, digits = 2, caption = "Mean marketing spend and purchase amount by segment")
 ```
 
+@Dataset-Mean-Summary-Table shows that the "Consumer" segment has the highest mean marketing spend and purchase amount, followed by the "Enterprise" segment, and then the "SMB" segment. This suggests that there may be differences in marketing spend and purchase amount across different customer segments, which will be further explored in the analysis.
+
+
+
+```{r}
+#| echo: FALSE
+#| message: FALSE
+#| warning: FALSE
+
+# Boxplots of mean marketing spend and purchase amount by segment
+
+ggplot2::ggplot(df, aes(x = segment, y = marketing_spend)) +
+  geom_boxplot() +
+  labs(title = "Boxplot of Marketing Spend by Segment", x = "Segment", y = "Marketing Spend") +
+  theme_classic()
+```
+
+@Dataset-Boxplots shows that the median
 
 # Results
