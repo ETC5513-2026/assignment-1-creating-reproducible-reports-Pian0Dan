@@ -1,7 +1,7 @@
 ---
 title: "Assignment 1"
 author: "Daniel Loza"
-date: "02-04-2026"
+date: "04-02-2026"
 format: 
     html:
         theme: cerulean
@@ -26,7 +26,7 @@ library(here)
 df <- read_csv(here("data/33842388_Daniel Loza.csv"))
 ```
 
-# Introduction
+# Introduction {#sec-introduction}
 In this report, I will visualise the relationship between marketing spend and the purchase amount, to establish whether a correlation exists between the two variables. As the customers are of different segments, I will also explore whether the correlation varies across different customer segments (to control for segment variables). This analysis will provide insights into the effectiveness of marketing spend in driving purchase amounts and whether this relationship is influenced by customer segmentation.
 
 # Research Question
@@ -44,8 +44,30 @@ The data will be cleaned by filtering out any missing values across the analysed
 
 # Subset and clean the data
 df <- df %>%
-  select(visits, purchase_amount, segment) %>%
+  select(marketing_spend, purchase_amount, segment) %>%
   drop_na()
 ```
 
 ## Dataset Description
+For the sake of the analysis, we are using `r ncol(df)` variables, with `r nrow(df)` clean observations across `r length(unique(df$segment))` observed customer segments. As stated above, the analysed variables are 'marketing_spend', 'purchase_amount' and 'segment'. 
+
+The `marketing_spend` is a continuous variable that represents the amount of money spent on marketing for each customer. The `purchase_amount` is also a continuous variable that represents the amount of money spent by each customer on purchases. The `segment` variable is a categorical variable that represents the different customer segments, and can take the values "Consumer", "SMB" and "Enterprise".
+
+```{r}
+# Table of mean marketing spend and purchase amount by segment
+
+summary_table <- df %>%
+  group_by(segment) %>%
+  summarise(
+    Count = n(),
+    `Mean Marketing Spend` = mean(marketing_spend, na.rm = TRUE),
+    `Mean Purchase Amount` = mean(purchase_amount, na.rm = TRUE)
+  ) %>%
+  ungroup() %>%
+  rename(Segment = segment)
+
+knitr::kable(summary_table, digits = 2, caption = "Mean marketing spend and purchase amount by segment")
+```
+
+
+# Results
