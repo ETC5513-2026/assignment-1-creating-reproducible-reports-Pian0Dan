@@ -54,6 +54,8 @@ For the sake of the analysis, we are using `r ncol(df)` variables, with `r nrow(
 The `marketing_spend` is a continuous variable that represents the amount of money spent on marketing for each customer. The `purchase_amount` is also a continuous variable that represents the amount of money spent by each customer on purchases. The `segment` variable is a categorical variable that represents the different customer segments, and can take the values "Consumer", "SMB" and "Enterprise".
 
 ```{r}
+#| echo=FALSE, message=FALSE, warning=FALSE
+
 # Table of mean marketing spend and purchase amount by segment
 
 summary_table <- df %>%
