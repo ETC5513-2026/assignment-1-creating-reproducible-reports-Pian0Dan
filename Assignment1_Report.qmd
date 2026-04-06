@@ -99,5 +99,46 @@ ggplot2::ggplot(df, aes(x = segment, y = marketing_spend)) +
 
 # Results
 
-To explore the relationship between marketing spend and purchase amount, I created colour-segmented scatterplots of the two variables, and calculated the correlation coefficient for each segment to quantify the strength and direction of the relationship.
+To explore the relationship between marketing spend and purchase amount, I first created colour-segmented scatterplots of the two variables.
 
+```{r}
+#| echo: FALSE
+#| message: FALSE
+#| warning: FALSE
+#| label: "fig-scatterplot"
+#| fig-cap: "Scatterplot of marketing spend vs purchase amount by segment"
+
+# Colour-segmented scatterplot of marketing spend vs purchase amount
+
+ggplot(df, aes(x = marketing_spend, y = purchase_amount, colour = segment)) +
+  geom_point() +
+  labs(title = "Scatterplot of Marketing Spend vs Purchase Amount by Segment", x = "Marketing Spend", y = "Purchase Amount") +
+  theme_classic()
+```
+
+@fig-scatterplot shows a positive relationship between marketing spend and purchase amount across all segments, with the "Consumer" segment showing a stronger relationship than the "SMB" and "Enterprise" segments. 
+
+To further explore this relationship, I calculated the correlation coefficient for each segment.
+
+```{r}
+#| echo: FALSE
+#| message: FALSE
+#| warning: FALSE
+#| label: "tbl-correlations"
+#| fig-cap: "Table of correlation coefficients between marketing spend and purchase amount by segment"
+
+# Calculate correlation coefficients for each segment
+
+correlations <- df %>%
+  group_by(segment) %>%
+  summarise(correlation = cor(marketing_spend, purchase_amount, use = "complete.obs")) %>%
+  ungroup()
+
+knitr::kable(correlations, digits = 2)
+```
+
+@tbl-correlations shows that the correlation coefficient between marketing spend and purchase amount is highest for the "Consumer" segment (0.87), followed by the "SMB" segment (0.79) and then the "Enterprise" segment (0.77).
+
+Cumulatively, these results suggest that there is a positive correlation between marketing spend and purchase amount across all segments, with the strongest correlation observed in the "Consumer" segment. This indicates that higher marketing spend is associated with higher purchase amounts, particularly for consumers.
+
+While this investigation is purely correlational and does not establish causation, it provides valuable insights into the relationship between marketing spend and purchase amount, and how this relationship varies across different customer segments. Future analyses could explore potential causal mechanisms or measure the sensitivity of each segment more thoroughly.
