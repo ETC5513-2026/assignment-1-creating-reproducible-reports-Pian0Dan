@@ -94,7 +94,7 @@ ggplot2::ggplot(df, aes(x = segment, y = marketing_spend)) +
   theme_classic()
 ```
 
-@fig-boxplots shows that the median marketing spend is much closer between the three segments, than the means shown in @tbl-dataset-means. This suggests that there may be some outliers in the "Consumer" segment that are driving up the mean marketing spend for that segment, which will be further explored in the analysis.
+@fig-boxplots shows that the median marketing spend is much closer between the three segments, than the means shown in @tbl-dataset-means. This suggests that there may be some outliers in the "Consumer" segment that are driving up the mean marketing spend for that segment, but these are beyond the scope of this analysis.
 @fig-boxplots also shows that the "Enterprise" segment has the smallest range and variability of the three segments.
 
 ## Results
@@ -111,12 +111,16 @@ To explore the relationship between marketing spend and purchase amount, I first
 # Colour-segmented scatterplot of marketing spend vs purchase amount
 
 ggplot(df, aes(x = marketing_spend, y = purchase_amount, colour = segment)) +
-  geom_point() +
-  labs(title = "Scatterplot of Marketing Spend vs Purchase Amount by Segment", x = "Marketing Spend", y = "Purchase Amount") +
-  theme_classic()
+  geom_point(alpha = 0.6) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(
+    title = "Marketing Spend vs Purchase Amount by Segment",
+    x = "Marketing Spend",
+    y = "Purchase Amount"
+  )
 ```
 
-@fig-scatterplot shows a positive relationship between marketing spend and purchase amount across all segments, with the "Consumer" segment showing a stronger relationship than the "SMB" and "Enterprise" segments. @fig-scatterplot also shows that there is more variability in the purchase amount for the "Consumer" segment compared to the other two segments, which may be driving the stronger relationship observed in that segment. It can also be noted that the majority of the higher marketing spend and purchase amount observations belong to the "Consumer" segment, which reinforces the likelihood of potential outliers in that segment driving up the means.
+@fig-scatterplot reveals a positive linear association between marketing spend and purchase amount across both segments. The fitted regression lines suggest that, on average, higher marketing expenditure is associated with increased purchase values. However, there is noticeable variability, particularly at higher spending levels, indicating heterogeneity in customer responses.
 
 To further explore this overall relationship, I calculated the correlation coefficient for each segment.
 
