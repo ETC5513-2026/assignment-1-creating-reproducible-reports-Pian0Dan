@@ -26,8 +26,8 @@ library(here)
 df <- read_csv(here("data/33842388_Daniel Loza.csv"))
 ```
 
-## Introduction {#sec-introduction}
-In this report, I will visualise the relationship between marketing spend and the purchase amount, to establish whether a correlation exists between the two variables. As the customers are of different segments, I will also explore whether the correlation varies across different customer segments (to control for segment variables). This analysis will provide insights into the effectiveness of marketing spend in driving purchase amounts and whether this relationship is influenced by customer segmentation.
+## Introduction
+In this report, I will visualise the relationship between marketing spend and the purchase amount, to establish whether a correlation exists between the two variables. As the customers are of different segments, I will also explore whether the correlation varies across different customer segments (to control for segment variables). This analysis will provide insights into the relationship between marketing spend and purchase amounts and highlight whether this relationship is influenced by customer segmentation.
 
 ## Research Question
 Does a higher marketing spend correlate with a higher purchase amount? Does this correlation vary across different customer segments?
