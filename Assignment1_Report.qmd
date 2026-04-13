@@ -57,7 +57,7 @@ The `marketing_spend` is a continuous variable that represents the amount of mon
 #| echo: FALSE 
 #| message: FALSE
 #| warning: FALSE
-#| label: "tbl-dataset-means"
+#| label: tbl-dataset-means
 #| tbl-cap: "Mean marketing spend and purchase amount by segment"
 
 # Table of mean marketing spend and purchase amount by segment
@@ -83,19 +83,22 @@ knitr::kable(summary_table, digits = 2)
 #| echo: FALSE
 #| message: FALSE
 #| warning: FALSE
-#| label: "fig-boxplots"
+#| label: fig-boxplots
 #| fig-cap: "Boxplots of marketing spend by segment"
+#| fig-pos: H
+#| fig-width: 7
+#| fig-height: 4.5
+#| out-width: "80%"
 
 # Boxplots of mean marketing spend by segment
 
-ggplot2::ggplot(df, aes(x = segment, y = marketing_spend)) +
+ggplot(df, aes(x = segment, y = marketing_spend)) +
   geom_boxplot() +
-  labs(title = "Boxplot of Marketing Spend by Segment", x = "Segment", y = "Marketing Spend") +
+  labs(x = "Segment", y = "Marketing Spend") +
   theme_classic()
 ```
 
-@fig-boxplots shows that the median marketing spend is much closer between the three segments, than the means shown in @tbl-dataset-means. This suggests that there may be some outliers in the "Consumer" segment that are driving up the mean marketing spend for that segment, but these are beyond the scope of this analysis.
-@fig-boxplots also shows that the "Enterprise" segment has the smallest range and variability of the three segments.
+@fig-boxplots shows that the median marketing spend is closer between the three segments, than the means shown in @tbl-dataset-means. This is likely due to some skew present in the "Consumer" segment. The "Consumer" segment also has the largest range and variability of marketing spend, as shown by the length of the boxplot whiskers. In contrast, @fig-boxplots shows that the "Enterprise" segment has the smallest range and variability of the three segments (while also having the fewest overall observations).
 
 ## Results
 
@@ -105,7 +108,7 @@ To explore the relationship between marketing spend and purchase amount, I first
 #| echo: FALSE
 #| message: FALSE
 #| warning: FALSE
-#| label: "fig-scatterplot"
+#| label: fig-scatterplot
 #| fig-cap: "Scatterplot of marketing spend vs purchase amount by segment"
 
 # Colour-segmented scatterplot of marketing spend vs purchase amount
@@ -128,7 +131,7 @@ To further explore this overall relationship, I calculated the correlation coeff
 #| echo: FALSE
 #| message: FALSE
 #| warning: FALSE
-#| label: "tbl-correlations"
+#| label: tbl-correlations
 #| fig-cap: "Table of correlation coefficients between marketing spend and purchase amount by segment"
 
 # Calculate correlation coefficients for each segment
@@ -145,6 +148,6 @@ knitr::kable(correlations, digits = 2)
 
 @tbl-correlations shows that the correlation coefficient between marketing spend and purchase amount is highest for the "Consumer" segment (0.87), followed by the "SMB" segment (0.79) and then the "Enterprise" segment (0.77).
 
-Cumulatively, these results suggest that there is a positive correlation between marketing spend and purchase amount across all segments, with the strongest correlation observed in the "Consumer" segment. This indicates that higher marketing spend is associated with higher purchase amounts, particularly for consumers.
+Cumulatively, these results suggest that there is a positive correlation between marketing spend and purchase amount across all segments, with the strongest correlation observed in the "Consumer" segment. This indicates that higher marketing spend is associated with higher purchase amounts, particularly for "Consumer" customers.
 
-While this investigation is purely correlational and does not establish causation, it provides valuable insights into the relationship between marketing spend and purchase amount, and how this relationship varies across different customer segments. Future analyses could explore potential causal mechanisms or measure the sensitivity of each segment more thoroughly.
+While this investigation is purely correlational and does not establish causation, it provides valuable insights into the relationship between marketing spend and purchase amount, and how this relationship varies across different customer segments. Future analyses could explore potential causal mechanisms or measure the sensitivity of each segment more thoroughly, to conclude whether increased marketing spend directly increases purchase amounts.

@@ -144,10 +144,10 @@ Table&nbsp;1: Mean marketing spend and purchase amount by segment
 <p><a href="#tbl-dataset-means" class="quarto-xref">Table&nbsp;1</a> shows that the “Consumer” segment has the highest mean marketing spend and purchase amount, followed by the “Enterprise” segment, and then the “SMB” segment. This suggests that there may be differences in marketing spend and purchase amount across different customer segments, which will be further explored in the analysis.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-boxplots" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-boxplots" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-boxplots-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Assignment1_Report_files/figure-html/fig-boxplots-1.png" class="img-fluid figure-img" width="672">
+<img src="Assignment1_Report_files/figure-html/fig-boxplots-1.png" class="img-fluid figure-img" style="width:80.0%" data-fig-pos="H">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplots-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Boxplots of marketing spend by segment
@@ -156,7 +156,7 @@ Figure&nbsp;1: Boxplots of marketing spend by segment
 </div>
 </div>
 </div>
-<p><a href="#fig-boxplots" class="quarto-xref">Figure&nbsp;1</a> shows that the median marketing spend is much closer between the three segments, than the means shown in <a href="#tbl-dataset-means" class="quarto-xref">Table&nbsp;1</a>. This suggests that there may be some outliers in the “Consumer” segment that are driving up the mean marketing spend for that segment, but these are beyond the scope of this analysis. <a href="#fig-boxplots" class="quarto-xref">Figure&nbsp;1</a> also shows that the “Enterprise” segment has the smallest range and variability of the three segments.</p>
+<p><a href="#fig-boxplots" class="quarto-xref">Figure&nbsp;1</a> shows that the median marketing spend is closer between the three segments, than the means shown in <a href="#tbl-dataset-means" class="quarto-xref">Table&nbsp;1</a>. This is likely due to some skew present in the “Consumer” segment. The “Consumer” segment also has the largest range and variability of marketing spend, as shown by the length of the boxplot whiskers. In contrast, <a href="#fig-boxplots" class="quarto-xref">Figure&nbsp;1</a> shows that the “Enterprise” segment has the smallest range and variability of the three segments (while also having the fewest overall observations).</p>
 </section>
 </section>
 <section id="results" class="level2">
@@ -215,8 +215,8 @@ Table&nbsp;2
 </div>
 </div>
 <p><a href="#tbl-correlations" class="quarto-xref">Table&nbsp;2</a> shows that the correlation coefficient between marketing spend and purchase amount is highest for the “Consumer” segment (0.87), followed by the “SMB” segment (0.79) and then the “Enterprise” segment (0.77).</p>
-<p>Cumulatively, these results suggest that there is a positive correlation between marketing spend and purchase amount across all segments, with the strongest correlation observed in the “Consumer” segment. This indicates that higher marketing spend is associated with higher purchase amounts, particularly for consumers.</p>
-<p>While this investigation is purely correlational and does not establish causation, it provides valuable insights into the relationship between marketing spend and purchase amount, and how this relationship varies across different customer segments. Future analyses could explore potential causal mechanisms or measure the sensitivity of each segment more thoroughly.</p>
+<p>Cumulatively, these results suggest that there is a positive correlation between marketing spend and purchase amount across all segments, with the strongest correlation observed in the “Consumer” segment. This indicates that higher marketing spend is associated with higher purchase amounts, particularly for “Consumer” customers.</p>
+<p>While this investigation is purely correlational and does not establish causation, it provides valuable insights into the relationship between marketing spend and purchase amount, and how this relationship varies across different customer segments. Future analyses could explore potential causal mechanisms or measure the sensitivity of each segment more thoroughly, to conclude whether increased marketing spend directly increases purchase amounts.</p>
 </section>
 
 </main>
