@@ -110,6 +110,9 @@ To explore the relationship between marketing spend and purchase amount, I first
 #| warning: FALSE
 #| label: fig-scatterplot
 #| fig-cap: Scatterplot of marketing spend vs purchase amount by segment
+#| fig-width: 7
+#| fig-height: 4.5
+#| out-width: "80%"
 
 # Colour-segmented scatterplot of marketing spend vs purchase amount
 
