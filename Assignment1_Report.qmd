@@ -149,4 +149,6 @@ knitr::kable(correlations, digits = 2)
 
 Cumulatively, these results suggest that there is a positive correlation between marketing spend and purchase amount across all segments, with the strongest correlation observed in the "Consumer" segment. This indicates that higher marketing spend is associated with higher purchase amounts, particularly for "Consumer" customers.
 
+### Conclusion
+
 While this investigation is purely correlational and does not establish causation, it provides valuable insights into the relationship between marketing spend and purchase amount, and how this relationship varies across different customer segments. Future analyses could explore potential causal mechanisms or measure the sensitivity of each segment more thoroughly, to conclude whether increased marketing spend directly increases purchase amounts.
