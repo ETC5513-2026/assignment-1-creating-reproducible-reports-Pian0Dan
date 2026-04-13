@@ -58,7 +58,7 @@ The `marketing_spend` is a continuous variable that represents the amount of mon
 #| message: FALSE
 #| warning: FALSE
 #| label: tbl-dataset-means
-#| tbl-cap: "Mean marketing spend and purchase amount by segment"
+#| tbl-cap: Mean marketing spend and purchase amount by segment
 
 # Table of mean marketing spend and purchase amount by segment
 
@@ -84,7 +84,7 @@ knitr::kable(summary_table, digits = 2)
 #| message: FALSE
 #| warning: FALSE
 #| label: fig-boxplots
-#| fig-cap: "Boxplots of marketing spend by segment"
+#| fig-cap: Boxplots of marketing spend by segment
 #| fig-pos: H
 #| fig-width: 7
 #| fig-height: 4.5
@@ -109,7 +109,7 @@ To explore the relationship between marketing spend and purchase amount, I first
 #| message: FALSE
 #| warning: FALSE
 #| label: fig-scatterplot
-#| fig-cap: "Scatterplot of marketing spend vs purchase amount by segment"
+#| fig-cap: Scatterplot of marketing spend vs purchase amount by segment
 
 # Colour-segmented scatterplot of marketing spend vs purchase amount
 
@@ -131,7 +131,7 @@ To further explore this overall relationship, I calculated the correlation coeff
 #| message: FALSE
 #| warning: FALSE
 #| label: tbl-correlations
-#| fig-cap: "Table of correlation coefficients by segment"
+#| tbl-cap: Table of correlation coefficients by segment
 
 # Calculate correlation coefficients for each segment
 
