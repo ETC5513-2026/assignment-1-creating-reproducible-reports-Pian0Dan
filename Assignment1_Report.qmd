@@ -51,7 +51,7 @@ df <- df %>%
 ### Dataset Description
 For the sake of the analysis, we are using `r ncol(df)` variables, with `r nrow(df)` clean observations across `r length(unique(df$segment))` observed customer segments. As stated above, the analysed variables are `marketing_spend`, `purchase_amount` and `segment`. 
 
-The `marketing_spend` is a continuous variable that represents the amount of money spent on marketing for each customer. The `purchase_amount` is also a continuous variable that represents the amount of money spent by each customer on purchases. The `segment` variable is a categorical variable that represents the different customer segments, and can take the values "Consumer", "SMB" and "Enterprise".
+The `marketing_spend` is a continuous variable that represents the amount of money spent on marketing for each customer. The `purchase_amount` is also a continuous variable that represents the amount of money spent by each customer on purchases. The `segment` variable is a categorical variable that represents the different customer segments, and can take the values "Consumer" (direct to consumer), "SMB" (small-to-medium business) and "Enterprise" (large business).
 
 ```{r}
 #| echo: FALSE 
