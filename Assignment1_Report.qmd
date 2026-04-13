@@ -122,7 +122,7 @@ ggplot(df, aes(x = marketing_spend, y = purchase_amount, colour = segment)) +
   )
 ```
 
-@fig-scatterplot reveals a positive linear association between marketing spend and purchase amount across both segments. The fitted regression lines suggest that, on average, higher marketing expenditure is associated with increased purchase values. However, there is noticeable variability, particularly at higher spending levels, indicating heterogeneity in customer responses.
+@fig-scatterplot reveals a positive linear association between marketing spend and purchase amount across all segments. The fitted regression lines suggest that, on average, higher marketing expenditure is associated with increased purchase values. However, there is noticeable variability, particularly at higher spending levels, indicating heterogeneity in customer responses.
 
 To further explore this overall relationship, I calculated the correlation coefficient for each segment.
 
