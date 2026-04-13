@@ -131,7 +131,7 @@ To further explore this overall relationship, I calculated the correlation coeff
 #| message: FALSE
 #| warning: FALSE
 #| label: tbl-correlations
-#| fig-cap: "Table of correlation coefficients between marketing spend and purchase amount by segment"
+#| fig-cap: "Table of correlation coefficients by segment"
 
 # Calculate correlation coefficients for each segment
 
